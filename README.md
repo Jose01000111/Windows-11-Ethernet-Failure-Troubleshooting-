@@ -20,8 +20,6 @@ I started by inspecting the Ethernet cable and ensuring both ends were fully ins
 ## 🔄 Step 2 — Reseating the Cable & Testing Alternate Ports
 I reseated the Ethernet cable on both the PC and router to eliminate loose connection issues. I then connected the cable to a different LAN port to determine whether a specific port was causing the problem.
 
-<img width="509" height="721" alt="DUCkPMy" src="https://github.com/user-attachments/assets/df2fe1e5-7181-4ed6-932f-7aa2801592b0" />
-
 >**📝Notes**
 >- Reseating helps remove intermittent contact faults.  
 >- Switching ports isolates potential router hardware failures.  
@@ -32,7 +30,11 @@ I reseated the Ethernet cable on both the PC and router to eliminate loose conne
 ## 🖥️ Step 3 — Validating the Ethernet Adapter in Windows
 I opened Network Connections using `ncpa.cpl` and disabled then re-enabled the Ethernet adapter to force it to reinitialize and restart DHCP negotiation. I observed status messages such as "Identifying..." or "Unidentified network."
 
-![Step 3 Screenshot](Screenshots/step3_adapter_status.png)
+<img width="400" height="199" alt="GNUOrz2" src="https://github.com/user-attachments/assets/2c5b2d99-d883-4c53-bb8a-de6c85a31db6" />
+
+---
+
+<img width="361" height="452" alt="H0lJ5um" src="https://github.com/user-attachments/assets/6cc860dd-722d-4ab3-a70f-e11a6d5207a3" />
 
 >**📝Notes**
 >- “Identifying…” indicates Windows is performing DHCP negotiation.  
