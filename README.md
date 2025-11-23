@@ -12,7 +12,7 @@ I started by inspecting the Ethernet cable and ensuring both ends were fully ins
 
 ![Step 1 Screenshot](Screenshots/step1_cable_check.png)
 
-**Notes**
+>**📝Notes**
 >- Link lights confirm Layer 1 and Layer 2 activity.  
 >- No link light typically means a bad cable, failing NIC, or faulty router port.  
 >- Physical inspection should always be the first step before software troubleshooting.
@@ -24,7 +24,7 @@ I reseated the Ethernet cable on both the PC and router to eliminate loose conne
 
 ![Step 2 Screenshot](Screenshots/step2_port_isolation.png)
 
-**Notes**
+>**📝Notes**
 >- Reseating helps remove intermittent contact faults.  
 >- Switching ports isolates potential router hardware failures.  
 >- This ensures the issue is not caused by a simple physical layer fault.
@@ -36,7 +36,7 @@ I opened Network Connections using `ncpa.cpl` and disabled then re-enabled the E
 
 ![Step 3 Screenshot](Screenshots/step3_adapter_status.png)
 
-**Notes**
+>**📝Notes**
 >- “Identifying…” indicates Windows is performing DHCP negotiation.  
 >- “Unidentified network” usually means missing or invalid IP or DNS.  
 >- Reinitializing the adapter clears temporary driver or OS-level network issues.
@@ -48,7 +48,7 @@ The troubleshooting steps follow a methodical approach to fix Ethernet issues in
 
 ![Step 4 Screenshot](Screenshots/step4_cmd_resets.png)
 
-**📝Notes**
+>**📝Notes**
 >- `netsh winsock reset` repairs corrupted Windows networking APIs.  
 >- `netsh int ip reset` rebuilds the TCP/IP configuration.  
 >- `ipconfig /flushdns` removes cached DNS entries.  
@@ -76,7 +76,7 @@ Alternate: 8.8.4.4
 
 ![Step 6 Screenshot](Screenshots/step6_dns_config.png)
 
-**📝Notes**
+>**📝Notes**
 >- Manual DNS helps identify failures in DHCP-provided DNS.  
 >- Google DNS servers provide reliable external resolution.  
 >- Successful connectivity with manual DNS indicates a gateway DHCP/DNS misconfiguration.
