@@ -1,4 +1,4 @@
-# 🔧 Windows 11 Ethernet Failure Troubleshooting — Full Diagnostic Walkthrough
+# 🔧 Windows 11 Ethernet Failure Troubleshooting & Diagnostic Walkthrough
 
 ## 📘 Summary
 In this lab, I performed a structured troubleshooting workflow to diagnose and resolve an Ethernet connectivity issue on a Windows 11 system. I began by validating the physical connection and link activity, then confirmed the adapter status inside Windows. I proceeded with a full IP stack and Winsock reset, inspected DHCP and DNS configuration, and finally tested manual DNS assignment to isolate name-resolution failures.  
@@ -10,8 +10,6 @@ In this lab, I performed a structured troubleshooting workflow to diagnose and r
 ## 🔍 Step 1 — Physical Cable & Link Verification
 I started by inspecting the Ethernet cable and ensuring both ends were fully inserted. I checked the NIC link lights, tested a different LAN port on the router, and swapped in a known-good cable to rule out physical failures.
 
-![Step 1 Screenshot](Screenshots/step1_cable_check.png)
-
 >**📝Notes**
 >- Link lights confirm Layer 1 and Layer 2 activity.  
 >- No link light typically means a bad cable, failing NIC, or faulty router port.  
@@ -22,7 +20,7 @@ I started by inspecting the Ethernet cable and ensuring both ends were fully ins
 ## 🔄 Step 2 — Reseating the Cable & Testing Alternate Ports
 I reseated the Ethernet cable on both the PC and router to eliminate loose connection issues. I then connected the cable to a different LAN port to determine whether a specific port was causing the problem.
 
-![Step 2 Screenshot](Screenshots/step2_port_isolation.png)
+<img width="509" height="721" alt="DUCkPMy" src="https://github.com/user-attachments/assets/df2fe1e5-7181-4ed6-932f-7aa2801592b0" />
 
 >**📝Notes**
 >- Reseating helps remove intermittent contact faults.  
@@ -46,7 +44,19 @@ I opened Network Connections using `ncpa.cpl` and disabled then re-enabled the E
 ## 🧹 Step 4 — Resetting IP Stack, Winsock, and DNS Cache
 The troubleshooting steps follow a methodical approach to fix Ethernet issues in Windows 11. They cover checking physical connections, verifying the adapter, resetting the network stack, and testing IP and DNS settings to systematically identify and resolve both hardware and software problems.
 
-![Step 4 Screenshot](Screenshots/step4_cmd_resets.png)
+<img width="509" height="721" alt="DUCkPMy" src="https://github.com/user-attachments/assets/72a580b7-e3c0-4eaf-a2ee-345e0ae7525a" />
+
+---
+
+<img width="505" height="98" alt="9oLG66f" src="https://github.com/user-attachments/assets/7d2d13a6-fef3-4d5c-bc76-58cbd8b4f946" />
+
+---
+
+<img width="736" height="810" alt="WsnlF5e" src="https://github.com/user-attachments/assets/86e87cd3-a596-49db-b9c0-d80f4cbb5673" />
+
+---
+
+<img width="718" height="132" alt="sG2uIxp" src="https://github.com/user-attachments/assets/41b2fb6d-460e-405c-b66b-d2e449c5de4f" />
 
 >**📝Notes**
 >- `netsh winsock reset` repairs corrupted Windows networking APIs.  
@@ -60,7 +70,7 @@ The troubleshooting steps follow a methodical approach to fix Ethernet issues in
 ## 📡 Step 5 — Inspecting IP Address, Gateway, and DNS
 I ran `ipconfig` to view the system’s IPv4 address, subnet mask, default gateway, and DNS configuration to check for DHCP assignment or APIPA fallback.
 
-![Step 5 Screenshot](Screenshots/step5_ipconfig.png)
+<img width="661" height="494" alt="FTY9wCA" src="https://github.com/user-attachments/assets/53578971-ad30-4789-91c6-a1b60aeb3452" />
 
 >**📝Notes**
 >- Valid private DHCP ranges: `192.168.x.x`, `10.x.x.x`, `172.16–31.x.x`.  
@@ -74,7 +84,11 @@ I manually configured the DNS servers for the Ethernet adapter:
 Preferred: 8.8.8.8  
 Alternate: 8.8.4.4
 
-![Step 6 Screenshot](Screenshots/step6_dns_config.png)
+<img width="747" height="460" alt="C1du5O5" src="https://github.com/user-attachments/assets/b95c0151-9c2a-4abb-b3ef-0879d278cb94" />
+
+---
+
+<img width="557" height="249" alt="4USpYlc" src="https://github.com/user-attachments/assets/c87d8687-fe24-434d-a685-66e2da5ea9b3" />
 
 >**📝Notes**
 >- Manual DNS helps identify failures in DHCP-provided DNS.  
